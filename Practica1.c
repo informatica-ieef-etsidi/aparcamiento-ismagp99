@@ -1,4 +1,4 @@
-//Programa para gestionar 2 plazas de aparcamiento en un bucle infinito. Por Ismael Gómez Pacheco
+//Programa para gestionar 2 plazas de aparcamiento en un bucle infinito. Por Ismael GÃ³mez Pacheco
 #include <stdio.h>
 
 void main() {
@@ -63,7 +63,7 @@ void main() {
 			break;
 		case 'A':
 		case 'a':
-			if (p1 == 0 & p2 == 0) {
+			if (p1 == 0 && p2 == 0) {
 				printf("El parking esta vacio\n");
 				system("pause");
 				scanf_s("%c", &basura);
@@ -85,7 +85,7 @@ void main() {
 						break;
 					}
 					else {
-						printf("La matricula no corresponde con ningun vehiculo registrado\n");
+						printf("La matricula no corresponde a ningun vehiculo registrado\n");
 						break;
 					}
 				}
