@@ -1,9 +1,8 @@
 #include <stdio.h>
-#include <string.h>
 
 void main() {
 	system("COLOR E4");
-	int i, j, k, l, pc1 = 0, pc2 = 0, pm1 = 0, pm2 = 0, comparacionC1 = 1, comparacionC2 = 1, comparacionM1 = 1, comparacionM2 = 1;
+	int i, j, k, l, pc1 = 0, pc2 = 0, pm1 = 0, pm2 = 0;
 	int cc1, cc2, cm1, cm2;
 	char mc1[8], mm1[8];
 	char mc2[8], mm2[8];
