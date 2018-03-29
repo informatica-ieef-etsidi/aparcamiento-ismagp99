@@ -2,11 +2,12 @@
 #include <string.h>
 
 void main() {
-	system("COLOR E4");
-	int i, pc1 = 0, pc2 = 0, pm1=0, pm2=0, comparacionC1 = 1, comparacionC2 = 1, comparacionM1=1, comparacionM2=1;
+	system("COLOR E4"); //Color amarillo de fondo y letras rojas
+	int i, pc1 = 0, pc2 = 0, pm1=0, pm2=0; //p=0 significa que la plaza está inicialmente libre
+	int comparacionC1 = 1, comparacionC2 = 1, comparacionM1=1, comparacionM2=1;
 	char mc1[8], mm1[8];
 	char mc2[8], mm2[8];
-	char m3[8];
+	char m3[8]; //m3 es el valor que introduce la persona y se usa para comparar con los ya registrados
 	char opcion, vehiculo;
 	for (i = 1; i > 0;i++) {
 		system("cls");
@@ -92,7 +93,7 @@ void main() {
 				system("cls");
 				printf("Introduzca el numero de matricula\n");
 				gets(m3);
-				comparacionC1 = strcmp(mc1, m3);
+				comparacionC1 = strcmp(mc1, m3); //Con strcmp se comparan las cadenas, si es 0 es que son iguales
 				comparacionC2 = strcmp(mc2, m3);
 				comparacionM1 = strcmp(mm1, m3);
 				comparacionM2 = strcmp(mm2, m3);
