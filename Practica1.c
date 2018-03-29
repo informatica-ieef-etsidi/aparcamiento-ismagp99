@@ -2,7 +2,7 @@
 #include <string.h>
 
 void main() {
-	system("COLOR E4"); //Color amarillo de fonfo y letras rojas
+	system("COLOR E4"); //Color amarillo de fondo y letras rojas
 	int p1 = 0, p2 = 0, comparacion1=1, comparacion2=1; //p1=0 y p2=0 significa que las plazas 1 y 2 están inicialmente libres
 	char m1[8];
 	char m2[8];
