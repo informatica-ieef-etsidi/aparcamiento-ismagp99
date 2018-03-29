@@ -2,11 +2,11 @@
 #include <string.h>
 
 void main() {
-	system("COLOR E4");
-	int p1 = 0, p2 = 0, comparacion1=1, comparacion2=1;
+	system("COLOR E4"); //Color amarillo de fonfo y letras rojas
+	int p1 = 0, p2 = 0, comparacion1=1, comparacion2=1; //p1=0 y p2=0 significa que las plazas 1 y 2 están inicialmente libres
 	char m1[8];
 	char m2[8];
-	char m3[8];
+	char m3[8]; //m3 es el valor que introduce la persona y se usa para comparar con los ya registrados
 	char opcion;
 	while (1) {
 		system("cls");
@@ -52,7 +52,7 @@ void main() {
 				system("cls");
 				printf("Introduzca el numero de matricula\n");
 				gets(m3);
-				comparacion1 = strcmp(m1, m3);
+				comparacion1 = strcmp(m1, m3); //Con strcmp se comparan las cadenas, si es 0 es que son iguales
 				comparacion2 = strcmp(m2, m3);
 				if (comparacion1 == 0) {
 					p1 = 0;
