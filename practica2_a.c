@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 void main() {
-	system("COLOR E4");
-	int i, j, k, l, pc1 = 0, pc2 = 0, pm1 = 0, pm2 = 0;
+	system("COLOR E4"); //Color amarillo de fondo y letras rojas
+	int i, j, k, l, pc1 = 0, pc2 = 0, pm1 = 0, pm2 = 0; //p=0 significa que la plaza está inicialmente libre
 	int cc1, cc2, cm1, cm2;
 	char mc1[8], mm1[8];
 	char mc2[8], mm2[8];
@@ -33,15 +33,15 @@ void main() {
 				if (pc1 == 0) {
 					system("cls");
 					printf("Introduzca el numero de su matricula\n");
-					gets(m3);
+					gets(m3); //Se analiza que la matrícula siga la estructura NNNNLLL
 					for (l = 1;l > 0;l++) {
-						for (j = 4;j < 7;j++) {
+						for (j = 4;j < 7;j++) { //Primero comprueba las letras
 							if (m3[j] >= 'A' && m3[j] <= 'Z') {
-								for (k = 0;k < 4;k++) {
+								for (k = 0;k < 4;k++) { //Aquí comprueba los números
 									if (m3[k] < '0' || m3[k]>'9') {
 										printf("La matricula introducida es incorrecta\n");
 										system("pause");
-										l = -2;
+										l = -2; //Para salir del bucle inicial
 										break;
 									}
 								}
@@ -55,7 +55,7 @@ void main() {
 						}
 						if (l > 0) {
 							pc1 = 1;
-							for (j = 0;j < 8;j++) {
+							for (j = 0;j < 8;j++) { //Para copiar una cadena sin la librería string.h
 								mc1[j] = m3[j];
 							}
 							printf("El coche con numero de matricula %s ha reservado la plaza 1\n", mc1);
@@ -200,7 +200,7 @@ void main() {
 				cm2 = 0;
 				printf("Introduzca el numero de matricula\n");
 				gets(m3);
-				for (j = 0;j < 7;j++) {
+				for (j = 0;j < 7;j++) { //Este bucle compara cadenas sin string.h
 					if (m3[j] == mc1[j]) {
 						cc1++;
 					}
@@ -214,7 +214,7 @@ void main() {
 						cm2++;
 					}
 				}
-				if (cc1 == 7) {
+				if (cc1 == 7) { //La matrícula que tenga los 7 caracteres en común con la introducida abandona el parking
 					pc1 = 0;
 					printf("Ahora la plaza 1 de coches esta libre\n");
 				}
@@ -268,13 +268,13 @@ void main() {
 		case 'B':
 		case 'b':
 			system("cls");
-			cc1 = 0;
+			cc1 = 0; //Se reinician los valores de las comparaciones
 			cc2 = 0;
 			cm1 = 0;
 			cm2 = 0;
 			printf("Introduzca el numero de matricula de su vehiculo para ver su estado\n");
 			gets(m3);
-			for (j = 0;j < 7;j++) {
+			for (j = 0;j < 7;j++) { //Funciona exactamente igual que la opción de abandonar
 				if (m3[j] == mc1[j]) {
 					cc1++;
 				}
