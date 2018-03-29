@@ -3,37 +3,37 @@
 #include <string.h>
 
 struct TPlaza {
-	char tipo;
-	int estado;
+	char tipo; //C si es de coche y M si es de moto
+	int estado; //0-libre 1-ocupado
 	char matricula[8];
 };
 struct TUsuario {
 	char nombreusuario[50];
-	char contrase�a[50];
+	char contraseña[50];
 };
 
 void main() {
-	system("COLOR E4");
-	struct TPlaza Plaza1 = { "C", 0 }, Plaza2 = { "C", 0 }, Plaza3 = { "M", 0 }, Plaza4 = { "M", 0 };
-	struct TUsuario Usuario = { "Admin", "administrador1234" };
-	int i, j, k, l;
-	char acceso[50];
-	char m3[8];
+	system("COLOR E4"); //Color amarillo de fondo y letras rojas
+	struct TPlaza Plaza1 = { "C", 0 }, Plaza2 = { "C", 0 }, Plaza3 = { "M", 0 }, Plaza4 = { "M", 0 }; //Las plazas 1 y 2 son de coche y las otras de moto
+	struct TUsuario Usuario = { "Admin", "administrador1234" }; //Los valores predefinidos para acceder al programa
+	int i, j, k, l; //Para bucles, contadores y demás utilidades
+	char acceso[50]; //Registra el usuario y después la conraseña introducidos
+	char m3[8]; //m3 es el valor que introduce la persona y se usa para comparar con los ya registrados
 	char opcion, vehiculo;
-	for (i = 1; i < 4; i++) {
+	for (i = 1; i < 4; i++) { //Ofrece 3 intentos para introducir usuario y conraseña
 		system("cls");
 		printf("Introduzca su usuario: ");
 		gets(acceso);
-		if (strcmp(acceso, Usuario.nombreusuario) == 0) {
+		if (strcmp(acceso, Usuario.nombreusuario) == 0) { //Compara usuario
 			printf("\nIntroduzca su contrasena: ");
 			gets(acceso);
-			if (strcmp(acceso, Usuario.contrase�a) == 0) {
+			if (strcmp(acceso, Usuario.contraseña) == 0) { //Compara contraseña, si está todo bien sale del bucle y se activa el menú
 				break;
 			}
 		}
 		printf("El usuario o la contrasena son incorrectos, le quedan %d intentos\n", 3-i);
 		system("pause");
-		if (i == 3) {
+		if (i == 3) { //A los 3 intentos se cierra el programa
 			system("cls");
 			printf("Ha gastado los 3 intentos que tenia, vuelva otro dia\n");
 			system("pause");
@@ -67,7 +67,7 @@ void main() {
 					system("cls");
 					printf("Introduzca el numero de su matricula\n");
 					gets(m3);
-					if (strcmp(m3, Plaza1.matricula) == 0 || strcmp(m3, Plaza2.matricula) == 0) {
+					if (strcmp(m3, Plaza1.matricula) == 0 || strcmp(m3, Plaza2.matricula) == 0) { //Impide que se repitan matrículas
 						printf("El vehiculo con la matricula introducida ya esta registrado\n");
 						system("pause");
 						break;
@@ -76,25 +76,25 @@ void main() {
 						printf("El vehiculo con la matricula introducida ya esta registrado\n");
 						system("pause");
 						break;
-					}
-					for (j = 0;j < 4;j++) {
+					} //Se analiza que la matrícula siga la estructura NNNNLLL
+					for (j = 0;j < 4;j++) { //Primero comprueba los números
 						if (m3[j] >= '0' && m3[j] <= '9') {
 							l++;
 						}
 					}
-					for (j = 4;j < 7;j++) {
+					for (j = 4;j < 7;j++) { //Aquí comprueba las letras
 						if (m3[j] >= 'A' && m3[j] <= 'Z') {
 							l++;
 						}
 					}
-					if (l != 7) {
+					if (l != 7) { //Si el contador l no valida los 7 caracteres se rechaza la matrícula
 						printf("La matricula introducida es incorrecta\n");
 						system("Pause");
 					}
 					else {
 						if (Plaza1.estado == 0) {
 							Plaza1.estado = 1;
-							strcpy(Plaza1.matricula, m3);
+							strcpy(Plaza1.matricula, m3); //Registra la matrícula introducida como matrícula de la plaza 1
 							printf("El coche con numero de matricula %s ha reservado la plaza 1\n", Plaza1.matricula);
 							system("pause");
 						}
@@ -179,7 +179,7 @@ void main() {
 			else {
 				system("cls");
 				printf("Introduzca el numero de matricula\n");
-				gets(m3);
+				gets(m3); //Con strcmp se comparan las cadenas, si es 0 es que son iguales
 				if (strcmp(m3, Plaza1.matricula) == 0) {
 					Plaza1.estado = 0;
 					printf("Ahora la plaza 1 de coches esta libre\n");
