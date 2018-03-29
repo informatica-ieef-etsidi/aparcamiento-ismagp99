@@ -6,7 +6,7 @@ void main() {
 	int cc1, cc2, cm1, cm2;
 	char mc1[8], mm1[8];
 	char mc2[8], mm2[8];
-	char m3[8];
+	char m3[8]; //m3 es el valor que introduce la persona y se usa para comparar con los ya registrados
 	char opcion, vehiculo;
 	for (i = 1; i > 0;i++) {
 		system("cls");
